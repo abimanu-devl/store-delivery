@@ -1,16 +1,13 @@
 package com.ds.deliveryapi.model;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document (collection = "Delivery")
 public class DeliveryDetails {
 	
-	@Id
-	private int deliveryId;
 	private String customerName;
-	private String contactNumber;
 	private String homeNo;
+	private String addressLine;
 	private String city;
 	private String provice;
 	private String postalCode;
@@ -19,24 +16,14 @@ public class DeliveryDetails {
 		super();
 	}
 
-	public DeliveryDetails(int deliveryId, String customerName, String contactNumber, String homeNo, String city,
-			String provice, String postalCode) {
+	public DeliveryDetails(String customerName, String homeNo, String addressLine, String city, String provice, String postalCode) {
 		super();
-		this.deliveryId = deliveryId;
 		this.customerName = customerName;
-		this.contactNumber = contactNumber;
 		this.homeNo = homeNo;
+		this.addressLine = addressLine;
 		this.city = city;
 		this.provice = provice;
 		this.postalCode = postalCode;
-	}
-
-	public int getDeliveryId() {
-		return deliveryId;
-	}
-
-	public void setDeliveryId(int deliveryId) {
-		this.deliveryId = deliveryId;
 	}
 
 	public String getCustomerName() {
@@ -46,21 +33,21 @@ public class DeliveryDetails {
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
-
-	public String getContactNumber() {
-		return contactNumber;
-	}
-
-	public void setContactNumber(String contactNumber) {
-		this.contactNumber = contactNumber;
-	}
-
+	
 	public String getHomeNo() {
 		return homeNo;
 	}
 
 	public void setHomeNo(String homeNo) {
 		this.homeNo = homeNo;
+	}
+	
+	public String getAddressLine() {
+		return addressLine;
+	}
+
+	public void setAddressLine(String addressLine) {
+		this.addressLine = addressLine;
 	}
 
 	public String getCity() {
